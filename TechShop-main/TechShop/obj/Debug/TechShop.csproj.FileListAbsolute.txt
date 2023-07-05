@@ -1,0 +1,291 @@
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\TechShop.dll.config
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\TechShop.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\TechShop.pdb
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\csc.exe
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\csc.exe.config
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\csc.rsp
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\csi.exe
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\csi.exe.config
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\csi.rsp
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Buffers.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Memory.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\vbc.exe
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\vbc.exe.config
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\vbc.rsp
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\VBCSCompiler.exe
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Antlr3.Runtime.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\EntityFramework.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\EntityFramework.SqlServer.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\log4net.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Newtonsoft.Json.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Owin.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\PagedList.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\PagedList.Mvc.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\PayPal.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Helpers.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Mvc.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Optimization.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Razor.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.WebPages.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.WebPages.Razor.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\WebGrease.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\EntityFramework.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\EntityFramework.SqlServer.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\log4net.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Newtonsoft.Json.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\PagedList.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\PagedList.Mvc.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\PayPal.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Helpers.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Mvc.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Razor.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.WebPages.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.WebPages.Razor.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\System.Web.Optimization.xml
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\bin\Antlr3.Runtime.pdb
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\obj\Debug\TechShop.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\obj\Debug\TechShop.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\obj\Debug\TechShop.csproj.CopyComplete
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\obj\Debug\TechShop.dll
+C:\Users\ASUS\Documents\DoAnFramework\TechShop\TechShop\obj\Debug\TechShop.pdb
+D:\TechShop\TechShop\bin\TechShop.dll.config
+D:\TechShop\TechShop\bin\TechShop.dll
+D:\TechShop\TechShop\bin\TechShop.pdb
+D:\TechShop\TechShop\bin\roslyn\csc.exe
+D:\TechShop\TechShop\bin\roslyn\csc.exe.config
+D:\TechShop\TechShop\bin\roslyn\csc.rsp
+D:\TechShop\TechShop\bin\roslyn\csi.exe
+D:\TechShop\TechShop\bin\roslyn\csi.exe.config
+D:\TechShop\TechShop\bin\roslyn\csi.rsp
+D:\TechShop\TechShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\TechShop\TechShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\TechShop\TechShop\bin\roslyn\Microsoft.Managed.Core.targets
+D:\TechShop\TechShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\TechShop\TechShop\bin\roslyn\System.Buffers.dll
+D:\TechShop\TechShop\bin\roslyn\System.Collections.Immutable.dll
+D:\TechShop\TechShop\bin\roslyn\System.Memory.dll
+D:\TechShop\TechShop\bin\roslyn\System.Numerics.Vectors.dll
+D:\TechShop\TechShop\bin\roslyn\System.Reflection.Metadata.dll
+D:\TechShop\TechShop\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\TechShop\TechShop\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\TechShop\TechShop\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\TechShop\TechShop\bin\roslyn\vbc.exe
+D:\TechShop\TechShop\bin\roslyn\vbc.exe.config
+D:\TechShop\TechShop\bin\roslyn\vbc.rsp
+D:\TechShop\TechShop\bin\roslyn\VBCSCompiler.exe
+D:\TechShop\TechShop\bin\roslyn\VBCSCompiler.exe.config
+D:\TechShop\TechShop\bin\Antlr3.Runtime.dll
+D:\TechShop\TechShop\bin\EntityFramework.dll
+D:\TechShop\TechShop\bin\EntityFramework.SqlServer.dll
+D:\TechShop\TechShop\bin\log4net.dll
+D:\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Core.dll
+D:\TechShop\TechShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\TechShop\TechShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Cookies.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Facebook.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Google.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.OAuth.dll
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Twitter.dll
+D:\TechShop\TechShop\bin\Microsoft.Web.Infrastructure.dll
+D:\TechShop\TechShop\bin\Newtonsoft.Json.dll
+D:\TechShop\TechShop\bin\Owin.dll
+D:\TechShop\TechShop\bin\PagedList.dll
+D:\TechShop\TechShop\bin\PagedList.Mvc.dll
+D:\TechShop\TechShop\bin\PayPal.dll
+D:\TechShop\TechShop\bin\System.Web.Helpers.dll
+D:\TechShop\TechShop\bin\System.Web.Mvc.dll
+D:\TechShop\TechShop\bin\System.Web.Optimization.dll
+D:\TechShop\TechShop\bin\System.Web.Razor.dll
+D:\TechShop\TechShop\bin\System.Web.WebPages.Deployment.dll
+D:\TechShop\TechShop\bin\System.Web.WebPages.dll
+D:\TechShop\TechShop\bin\System.Web.WebPages.Razor.dll
+D:\TechShop\TechShop\bin\WebGrease.dll
+D:\TechShop\TechShop\bin\EntityFramework.xml
+D:\TechShop\TechShop\bin\EntityFramework.SqlServer.xml
+D:\TechShop\TechShop\bin\log4net.xml
+D:\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Core.xml
+D:\TechShop\TechShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\TechShop\TechShop\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\TechShop\TechShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Cookies.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Facebook.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Google.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.OAuth.xml
+D:\TechShop\TechShop\bin\Microsoft.Owin.Security.Twitter.xml
+D:\TechShop\TechShop\bin\Newtonsoft.Json.xml
+D:\TechShop\TechShop\bin\PagedList.xml
+D:\TechShop\TechShop\bin\PagedList.Mvc.xml
+D:\TechShop\TechShop\bin\PayPal.xml
+D:\TechShop\TechShop\bin\System.Web.Helpers.xml
+D:\TechShop\TechShop\bin\System.Web.Mvc.xml
+D:\TechShop\TechShop\bin\System.Web.Razor.xml
+D:\TechShop\TechShop\bin\System.Web.WebPages.xml
+D:\TechShop\TechShop\bin\System.Web.WebPages.Deployment.xml
+D:\TechShop\TechShop\bin\System.Web.WebPages.Razor.xml
+D:\TechShop\TechShop\bin\System.Web.Optimization.xml
+D:\TechShop\TechShop\bin\Antlr3.Runtime.pdb
+D:\TechShop\TechShop\obj\Debug\TechShop.csproj.AssemblyReference.cache
+D:\TechShop\TechShop\obj\Debug\TechShop.csproj.CoreCompileInputs.cache
+D:\TechShop\TechShop\obj\Debug\TechShop.csproj.CopyComplete
+D:\TechShop\TechShop\obj\Debug\TechShop.dll
+D:\TechShop\TechShop\obj\Debug\TechShop.pdb
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\TechShop.dll.config
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\TechShop.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\TechShop.pdb
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\csc.exe
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\csc.exe.config
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\csc.rsp
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\csi.exe
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\csi.exe.config
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\csi.rsp
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Buffers.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Memory.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\vbc.exe
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\vbc.exe.config
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\vbc.rsp
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\VBCSCompiler.exe
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Antlr3.Runtime.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\EntityFramework.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\EntityFramework.SqlServer.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\log4net.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Newtonsoft.Json.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Owin.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\PagedList.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\PagedList.Mvc.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\PayPal.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Helpers.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Mvc.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Optimization.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Razor.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.WebPages.Deployment.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.WebPages.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.WebPages.Razor.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\WebGrease.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\EntityFramework.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\EntityFramework.SqlServer.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\log4net.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Newtonsoft.Json.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\PagedList.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\PagedList.Mvc.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\PayPal.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Helpers.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Mvc.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Razor.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.WebPages.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.WebPages.Razor.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\System.Web.Optimization.xml
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\bin\Antlr3.Runtime.pdb
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\obj\Debug\TechShop.csproj.AssemblyReference.cache
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\obj\Debug\TechShop.csproj.CoreCompileInputs.cache
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\obj\Debug\TechShop.csproj.CopyComplete
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\obj\Debug\TechShop.dll
+C:\Users\dell\Documents\VS2019\Source Code\TechShop-main\TechShop\obj\Debug\TechShop.pdb

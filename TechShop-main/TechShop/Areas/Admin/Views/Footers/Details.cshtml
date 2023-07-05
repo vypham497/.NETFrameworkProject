@@ -1,0 +1,45 @@
+﻿@model TechShop.Models.Footer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@section header{
+    Chi tiết Footer
+}
+<div>
+    <hr />
+    <table class="table table-striped">
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Title)</th>
+            <td>@Html.DisplayFor(model => model.Title)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.ContentHtml)</th>
+            <td>@Html.Raw(Model.ContentHtml)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Status)</th>
+            <td>
+                @{
+                    if (Model.Status == true)
+                    {
+                        <span class="badge badge-pill badge-success">Kích hoạt</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-pill badge-danger">Chưa kích hoạt</span>
+                    }
+                }
+            </td>
+        </tr>
+
+    </table>
+    <hr />
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", null, new { id = Model.ID }, new { @class = "btn btn-primary btn-icon-split btn-padding" }) |
+    @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-secondary btn-icon-split btn-padding" })
+</p>

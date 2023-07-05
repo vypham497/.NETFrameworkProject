@@ -1,0 +1,44 @@
+﻿@model TechShop.Models.News
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+                var RelatedNewses = (List<TechShop.Models.News>)ViewBag.RelatedNewses;
+}
+@section title{
+    <title>@Model.ShortTitle</title>
+}
+
+<div class="single-post">
+    <div class="breadcrumb">
+        <ul class="breadcrumb__list">
+            <li><a href="/"><i aria-hidden="true" class="fa fa-home"></i></a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+            <li><a href="/tin-tuc">Tin Tức</a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+            <li><a href="/tin-tuc/chi-tiet/@Model.MetaTitle-@Model.ID">@Model.Title</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1 class="post_title">@Model.Title</h1>
+        <div class="post_meta">
+            <span>@(Model.PublishedDate.ToString())</span>
+        </div>
+        <div class="post_content">
+            @Html.Raw(Model.ContentHtml)
+        </div>
+    </div>
+    <div class="block post_related">
+        <div class="block__header"><span class="block__header__title">CÁC BÀI VIẾT KHÁC</span></div>
+        <div class="block__content">
+            @foreach (var item in RelatedNewses)
+            {
+                <div class="post">
+                    <div class="thumb"><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID"><img src="@item.Images" /></a></div>
+                    <div class="title"><a href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Title</a></div>
+                    <div class="desc">@item.Description</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

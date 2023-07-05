@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="949337db55934e9abc37307a0818d5aa" Name="Diagram1">
+        <EntityTypeShape EntityType="TechShopModel.Brand" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Category" Width="1.5" PointX="10.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Comment" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Contact" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Feedback" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Footer" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.GroupSlide" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Menu" Width="1.5" PointX="5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.MenuType" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.News" Width="1.5" PointX="13" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Order" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.OrderDetail" Width="1.5" PointX="13.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.ProductCategory" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Product" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Slide" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.Social" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.sysdiagram" Width="1.5" PointX="11.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.UserGroup" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechShopModel.User" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="TechShopModel.FK_Products_Brands" ManuallyRouted="false" />
+        <AssociationConnector Association="TechShopModel.FK_Newses_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="TechShopModel.FK_Slides_GroupSlides" ManuallyRouted="false" />
+        <AssociationConnector Association="TechShopModel.FK_Menus_MenuTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="TechShopModel.FK_Products_ProductCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="TechShopModel.FK_Users_UserGroups" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

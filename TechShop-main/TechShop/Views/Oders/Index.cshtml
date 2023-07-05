@@ -1,0 +1,117 @@
+﻿@model IEnumerable<TechShop.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumb">
+    <ul class="breadcrumb__list">
+        <li><a href="/"><i aria-hidden="true" class="fa fa-home"></i></a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+        <li><a href="/">Trang chủ</a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+        <li><a href="/">Quản lý đơn hàng</a> </li>
+    </ul>
+</div>
+
+@section css{
+    <style>
+        .Order {
+            color: black;
+            font-size: 1.5em;
+            padding: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: 'lato', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-radius: 3px;
+        }
+
+            table tbody td {
+                background-color: #ffffff;
+                box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.1);
+            }
+
+            table tbody th {
+                background-color: #ffffff;
+                box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.1);
+            }
+
+        td, th {
+            padding: 20px 10px;
+        }
+
+        table tbody td {
+            text-align: center;
+        }
+
+        table thead {
+            background-color: #95A5A6;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }        
+    </style>
+}
+<div>
+    <div class="Order">Danh Sách đơn đặt hàng</div>
+    <table class="table" border="0" width="100%">
+        <thead>
+            <tr>
+                <th width="20%">
+                </th>
+                <th width="30%">
+                    Ngày đặt hàng
+                </th>
+                <th width="20%">
+                    Tổng tiền
+                </th>
+                <th width="20%">
+                    Trạng Thái
+                </th>
+                <th width="10%"> Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="20%" align="center">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.DU-w3F1FVBcma2DAg341BwHaHV&pid=Api&P=0" width="60" height="60">
+                    </td>
+                    <td width="30%" align="center">
+                        <span class="font-weight-bold">@Html.DisplayFor(modelItem => item.CreatedDate)</span>
+                        <div class="product-qty">
+                        </div>
+                    </td>
+                    <td width="20%" align="center">
+                        <div class="text-right">
+                            <span class="font-weight-bold"> @item.TotalPrice.Value.ToString("N0")</span>
+                        </div>
+                    </td>
+                    @if (item.Status != "Đã xử lý            ")
+                    {
+                        <td align="center">
+                            Đang chờ xử lý
+                        </td>
+                    }
+                    else
+                    {
+                        <td align="center">
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                    }
+                    <th width="10%" align="center">
+                        @Html.ActionLink("Details", "Details", new { id = item.ID })
+                    </th>
+                </tr>
+            }
+        </tbody>       
+    </table>
+</div>

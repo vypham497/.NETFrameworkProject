@@ -1,0 +1,90 @@
+﻿@model TechShop.Models.Menu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section header{
+    Chi tiết menu
+}
+
+<div>
+    <hr />
+    <table class="table table-striped">
+        <tr>
+            <th scope="row">Loại Menu</th>
+            <td>@Html.DisplayFor(model => model.MenuType.Name)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Name)</th>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Description)</th>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Text)</th>
+            <td>@Html.DisplayFor(model => model.Text)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Link)</th>
+            <td>@Html.DisplayFor(model => model.Link)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Target)</th>
+            <td>@Html.DisplayFor(model => model.Target)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Order)</th>
+            <td>@Html.DisplayFor(model => model.Order)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.CssClass)</th>
+            <td>@Html.DisplayFor(model => model.CssClass)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.IsLocked)</th>
+            <td>@Html.DisplayFor(model => model.IsLocked)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.IsDeleted)</th>
+            <td>@Html.DisplayFor(model => model.IsDeleted)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.ParentID)</th>
+            <td>@Html.DisplayFor(model => model.ParentID)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.CreatedDate)</th>
+            <td>@Html.DisplayFor(model => model.CreatedDate)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.CreatedBy)</th>
+            <td>@Html.DisplayFor(model => model.CreatedBy)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.UpdatedDate)</th>
+            <td>@Html.DisplayFor(model => model.UpdatedDate)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.UpdatedBy)</th>
+            <td>@Html.DisplayFor(model => model.UpdatedBy)</td>
+        </tr>
+        
+    </table>
+    <hr/>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", null, new { id = Model.ID }, new { @class = "btn btn-primary btn-icon-split btn-padding" }) |
+    @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-secondary btn-icon-split btn-padding" })
+</p>

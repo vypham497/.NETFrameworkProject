@@ -1,0 +1,5 @@
+﻿@model List<TechShop.Models.ProductCategory>
+@foreach (var item in Model)
+{
+    <option value="@item.ID">@item.Title</option>
+}

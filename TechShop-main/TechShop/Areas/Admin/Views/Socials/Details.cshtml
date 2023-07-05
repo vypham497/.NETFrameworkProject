@@ -1,0 +1,62 @@
+﻿@model TechShop.Models.Social
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@section header{
+    Chi tiết MXH
+}
+
+<div>
+    <hr />
+    <table class="table table-striped">
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Title)</th>
+            <td>@Html.DisplayFor(model => model.Title)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Icon)</th>
+            <td>@(Html.Raw(Model.Icon))</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Link)</th>
+            <td>@Html.DisplayFor(model => model.Link)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Status)</th>
+            <td>@Html.DisplayFor(model => model.Status)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.CreatedDate)</th>
+            <td>@Html.DisplayFor(model => model.CreatedDate)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.CreatedBy)</th>
+            <td>@Html.DisplayFor(model => model.CreatedBy)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.UpdatedDate)</th>
+            <td>@Html.DisplayFor(model => model.UpdatedDate)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.UpdatedBy)</th>
+            <td>@Html.DisplayFor(model => model.UpdatedBy)</td>
+        </tr>
+
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Order)</th>
+            <td>@Html.DisplayFor(model => model.Order)</td>
+        </tr>
+    </table>
+    <hr />
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", null, new { id = Model.ID }, new { @class = "btn btn-primary btn-icon-split btn-padding" }) |
+    @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-secondary btn-icon-split btn-padding" })
+</p>

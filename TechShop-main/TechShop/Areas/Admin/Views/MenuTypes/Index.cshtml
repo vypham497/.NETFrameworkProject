@@ -1,0 +1,145 @@
+﻿@model IEnumerable<TechShop.Models.MenuType>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section css{
+    <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+@section js{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        $('.btnDelete').each(function () {
+            var ID = $(this).data('id');
+            $(this).off('click').on('click', function () {
+                swal({
+                    title: "Bạn chắc chứ?",
+                    text: "Xoá loại menu " + ID,
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '/MenuTypes/Delete/',
+                                data: {
+                                    id: ID
+                                },
+                                dataType: 'json',
+                                type: 'POST',
+                                success: function (res) {
+                                    if (res.status == true) {
+                                        swal("Xoá loại menu thành công!", {
+                                            icon: "success",
+                                        });
+                                        var $tr = $(this).closest('tr');
+                                        $tr.remove();
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        } else {
+                            swal("Loại menu vẫn được giữ nguyên!");
+                        }
+                    });
+            });
+        });
+    </script>
+}
+<p>
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-success btn-icon-split btn-padding" })
+</p>
+<div class="card mb-4">
+    <div class="card-header">Loại Menu</div>
+    <div class="card-body">
+        <div class="datatable">
+            <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IsActived)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IsDeleted)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IsActived)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.IsDeleted)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </tfoot>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="/Admin/MenuTypes/Details/@item.ID" data-toggle="tooltip" data-placement="top" title="Xem chi tiết">@Html.DisplayFor(modelItem => item.Name)</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @{
+                                if (item.IsActived == true)
+                                {
+                                    <span class="badge badge-pill badge-success">Kích hoạt</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-pill badge-danger">Chưa kích hoạt</span>
+                                }
+                            }
+                        </td>
+                        <td>
+                            @{
+                                if (item.IsDeleted == true)
+                                {
+                                    <span class="badge badge-pill badge-success">Đã xoá</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-pill badge-danger">Chưa xoá</span>
+                                }
+                            }
+                        </td>
+                        <td style="display:flex">
+                            <a class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Sửa" href="/Admin/MenuTypes/Edit/@item.ID"><i class="fa fa-edit"></i></a> |
+                            <a class="btnDelete btn btn-danger btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Xoá" data-ia="@item.ID"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

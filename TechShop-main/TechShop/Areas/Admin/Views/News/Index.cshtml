@@ -1,0 +1,156 @@
+﻿@model IEnumerable<TechShop.Models.News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section css{
+    <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        .img-custom {
+            width: 200px;
+        }
+    </style>
+}
+@section js{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="~/Assets/Admin/js/demo/datatables-demo.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        $('.btnDelete').each(function () {
+            var ID = $(this).data('id');
+            $(this).off('click').on('click', function () {
+                swal({
+                    title: "Bạn chắc chứ?",
+                    text: "Xoá bài viết " + ID,
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '/News/Delete/',
+                                data: {
+                                    id: ID
+                                },
+                                dataType: 'json',
+                                type: 'POST',
+                                success: function (res) {
+                                    if (res.status == true) {
+                                        swal("Xoá bài viết thành công!", {
+                                            icon: "success",
+                                        });
+                                        var $tr = $(this).closest('tr');
+                                        $tr.remove();
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        } else {
+                            swal("Bài viết vẫn được giữ nguyên!");
+                        }
+                    });
+            });
+        });
+    </script>
+}
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-success btn-icon-split btn-padding" })
+</p>
+<div class="mb-4">
+    <form method="post" action="/Admin/News/Index">
+        <div class="form-inline">
+            <div class="mb-2 mr-sm-2">
+                <select class="custom-select" name="Category">
+                    <option selected value="0">Chọn loại bài viết</option>
+                    @foreach (var item in ViewBag.Category)
+                    {
+                        <option value="@item.ID">@item.Title</option>
+                    }
+
+                </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Tên bài viết</div>
+                </div>
+                <input type="text" class="form-control" name="txtSearch">
+            </div>
+            <button type="submit" id="SearchBtn" class="btn btn-primary mb-2">Tìm kiếm</button>
+        </div>
+    </form>
+</div>
+<div class="card mb-4">
+    <div class="card-header">Danh sách bài viết</div>
+    <div class="card-body">
+        <div class="datatable">
+            <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            Loại bài viết
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Images)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ViewCount)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            Loại bài viết
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Images)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ViewCount)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a data-toggle="tooltip" data-placement="top" title="Xem chi tiết" href="/Admin/News/Details/@item.ID">@Html.DisplayFor(modelItem => item.Title)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category.Title)
+                            </td>
+                            <td>
+                                <img class="img-fluid img-custom" src="@Html.DisplayFor(modelItem => item.Images)" alt="">
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ViewCount)
+                            </td>
+                            <td style="display: flex">
+                                <a class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Sửa" href="/Admin/News/Edit/@item.ID"><i class="fa fa-edit"></i></a> |
+                                <a class="btnDelete btn btn-danger btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Xoá" data-id="@item.ID"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

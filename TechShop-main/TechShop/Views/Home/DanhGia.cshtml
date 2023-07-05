@@ -1,0 +1,31 @@
+﻿@model TechShop.Models.News
+<div class="block block--home">
+    <div class="block__header">
+        <span class="block__header__title">ĐÁNH GIÁ</span>
+    </div>
+
+    <div class="block__content home__tnc__channel">
+        <div class="tnc__big">
+            @foreach (var item in ViewBag.DanhGiaMoiNhat)
+            {
+                <div class="tnc_thumb">
+                    <img src="@item.Images" alt="">
+                </div>
+                <a class="tnc__title" href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Title</a>
+            }
+        </div>
+        <div class="tnc__list">
+            @foreach (var item in ViewBag.DanhGia)
+            {
+                <div class="tnc__list__item">
+                    <div class="tnc_thumb">
+                        <img src="@item.Images" alt="">
+                    </div>
+                    <a class="tnc__title" href="/tin-tuc/chi-tiet/@item.MetaTitle-@item.ID">@item.Title</a>
+                </div>
+            }
+            </div>
+    </div>
+
+    <div class="block__readmore"> <a href="/tin-tuc/danh-gia-1">Xem thêm đánh giá</a> </div>
+</div>

@@ -1,0 +1,66 @@
+﻿
+@model List<TechShop.Models.RecentProduct>
+@{
+    if (Model.Count() == 0)
+    {
+
+    }
+    else
+    {
+        <div class="block block--home">
+            <div class="block__header"><span class="block__header__title">SẢN PHẨM VỪA XEM</span></div>
+            <div class="block__content home__product desktop">
+                <div class="swiper-container product-container">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model)
+                        {
+                            var url = "/chi-tiet/" + item.Product.MetaTitle + "-" + item.Product.ID;
+                            string myClass = "hide";
+                            string oldprice = "";
+                            if (item.Product.OldPrice.HasValue)
+                            {
+                                oldprice = item.Product.OldPrice.Value.ToString("N0") + "đ";
+                            }
+
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    @if (item.Product.PercentSale != 0)
+                                    {
+                                        myClass = "percent";
+                                    }
+                                    <div class="@myClass"><span>@(item.Product.PercentSale.Value)%</span></div>
+                                    <div class="product__thumb">
+                                        <a class="product__link" href="@url"><img src="@item.Product.Thumb" alt=""></a>
+                                    </div>
+                                    <div class="product__bottom">
+                                        <div class="product__title">
+                                            <a href="@url" class="product__link">@item.Product.Title</a>
+                                        </div>
+                                        <div class="product__rate">
+                                            <div class="rate__star">
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                                <i class="fas fa-star "></i>
+                                            </div>
+                                            <div class="rate__text">0 đánh giá</div>
+                                        </div>
+                                        <div class="product__price">
+                                            <span class="price__selling">@(item.Product.Price.Value.ToString("N0")) đ</span>
+                                            <span class="price__old">@oldprice</span>
+                                        </div>
+                                        <button class="add-to-cart" data-id="@item.Product.ID">Mua ngay</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                </div>
+            </div>
+        </div>
+    }
+}

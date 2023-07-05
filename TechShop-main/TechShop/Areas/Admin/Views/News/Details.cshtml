@@ -1,0 +1,104 @@
+﻿@model TechShop.Models.News
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section css {
+    <style>
+        .img-custom {
+            width: 100px;
+        }
+    </style>
+}
+
+@section header{
+    Chi tiết tin tức
+}
+    <div>
+        <hr />
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Loại tin tức</th>
+                <td>@Html.DisplayFor(model => model.Category.Title)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Title)</th>
+                <td>@Html.DisplayFor(model => model.Title)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Images)</th>
+                <td><img class="img-fluid img-custom" src="@Url.Content(""+Html.DisplayFor(model => model.Images))" alt=""></td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Description)</th>
+                <td>@Html.DisplayFor(model => model.Description)</td>
+            </tr>
+            <tr>
+                <th scope="row"> @Html.DisplayNameFor(model => model.ContentHtml)</th>
+                <td>@Html.Raw(Model.ContentHtml)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.MetaKeywords)</th>
+                <td>@Html.DisplayFor(model => model.MetaKeywords)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.MetaDescription)</th>
+                <td>@Html.DisplayFor(model => model.MetaDescription)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Status)</th>
+                <td>@Html.DisplayFor(model => model.Status)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.CreatedDate)</th>
+                <td>@Html.DisplayFor(model => model.CreatedDate)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.CreatedBy)</th>
+                <td>@Html.DisplayFor(model => model.CreatedBy)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.UpdatedDate)</th>
+                <td>@Html.DisplayFor(model => model.UpdatedDate)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.UpdatedBy)</th>
+                <td>@Html.DisplayFor(model => model.UpdatedBy)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.PublishedDate)</th>
+                <td>@Html.DisplayFor(model => model.PublishedDate)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.RelatedNewes)</th>
+                <td>@Html.DisplayFor(model => model.RelatedNewes)</td>
+            </tr>
+            <tr>
+                <th scope="row"> @Html.DisplayNameFor(model => model.ViewCount)</th>
+                <td> @Html.DisplayFor(model => model.ViewCount)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.Source)</th>
+                <td>@Html.DisplayFor(model => model.Source)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.UpTopNew)</th>
+                <td>@Html.DisplayFor(model => model.UpTopNew)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.UpTopHot)</th>
+                <td>@Html.DisplayFor(model => model.UpTopHot)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(model => model.RelatedProduct)</th>
+                <td>@Html.DisplayFor(model => model.RelatedProduct)</td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+    <p>
+        @Html.ActionLink("Sửa", "Edit", null, new { id = Model.ID }, new { @class = "btn btn-primary btn-icon-split btn-padding" }) |
+        @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-secondary btn-icon-split btn-padding" })
+    </p>

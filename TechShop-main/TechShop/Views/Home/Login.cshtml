@@ -1,0 +1,213 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section title{
+    <title>Đăng nhập/Đăng ký</title>
+}
+@section css {
+    <link href="/Assets/Client/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Assets/Client/css/login/style.css" rel="stylesheet" />
+}
+@section js {
+    <script>
+        $(document).ready(function () {
+            $("#login-form").validate({
+
+                    invalidHandler: function (event, validator) {
+                        var errors = validator.numberOfInvalids();
+                        if (errors) {
+                            $(".alert-box").hide();
+                            var message = errors == 1
+                                ? 'Bạn đã nhập lỗi 1 field. Vui lòng nhập lại field này!'
+                                : 'Bạn đã nhập lỗi ' + errors + ' fields.  Vui lòng nhập lại cho các fields này!';
+                            var html = '<div class="alert-box"><div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>' + message + '</div></div>';
+                            $("#login-form").append(html);
+                        } else {
+                            
+                            $(".alert-box").hide();
+                        }
+                    },
+                    rules: {
+                        Username: { required: true, maxlength:20 },
+                        Password: { required: true }
+                    },
+                    messages: {
+                        Username: { required: "Bắt buộc nhập tên đăng nhập", maxlength: "Tối đa 20 ký tự" },
+                        Password: { required: "Bắt buộc nhập mạt khẩu" }
+                    },
+                    submitHandler: function () {
+                        var d = $("#login-form").serialize();
+                        var url = "/Home/Log";
+                        $.post(url, d, function (res) {
+                            if (res.status == false) {
+                                $(".alert-box").hide();
+                                var html = '<div class="alert-box"><div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>'+res.msg+'</div></div>';
+                                $("#login-form").append(html);
+
+                            } else {
+                                $(".alert-box").hide();
+                                var html = '<div class="alert-box"><div class="alert alert-success"><i class="fa fa-check-circle"></i>Đăng nhập thành công</div></div>';
+                                $("#login-form").append(html);
+                                location.href = "/";
+                            }
+                        }, "json");
+                    }
+                });
+
+        });
+        $(document).ready(function () {
+            $.validator.addMethod("validatePassword", function (value, element) {
+                return this.optional(element) || /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/i.test(value);
+            }, "Hãy nhập password từ 8 đến 16 ký tự bao gồm chữ hoa, chữ thường và ít nhất một chữ số");
+            $.validator.addMethod("checkPhone", function (value, element) {
+                return this.optional(element) || /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/i.test(value);
+            }, "Số điện thoại không hợp lệ");
+            $("#registration-form").validate({
+
+                invalidHandler: function (event, validator) {
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        $(".alert-box").hide();
+                        var message = errors == 1
+                            ? 'Bạn đã nhập lỗi 1 field. Vui lòng nhập lại field này!'
+                            : 'Bạn đã nhập lỗi ' + errors + ' fields.  Vui lòng nhập lại cho các fields này!';
+                        var html = '<div class="alert-box"><div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>' + message + '</div></div>';
+                        $("#login-form").append(html);
+                    } else {
+
+                        $(".alert-box").hide();
+                    }
+                },
+                rules: {
+                    Username: { required: true, maxlength: 20 },
+                    Password: { required: true, validatePassword: "Password"},
+                    Email: { required: true, email: true },
+                    Mobile: { required: true, checkPhone: "Mobile" },
+                    Name: { required: true },
+                    Address: { required: true },
+                    confirmPassword: {
+                        required: true, equalTo: '#pass'}
+
+                },
+                messages: {
+                    UserName: { required: "Bắt buộc nhập tên đăng nhập", maxlength: "Tối đa 20 ký tự" },
+                    Password: { required: "Bắt buộc nhập mật khẩu" },
+                    Email: { required: "Chưa nhập email", email: "Vui lòng nhập email hợp lệ" },
+                    Mobile: { required: "Chưa nhập số điện thoại" },
+                    Name: { required: "Chưa nhập tên" },
+                    Address: { required: "Chưa nhập địa chỉ" },
+                    confirmPassword: { required: "Chưa xác nhận mật khẩu", equalTo: "Mật khẩu nhập lại không chính xác !" }
+                },
+                submitHandler: function () {
+                    var d = $("#registration-form").serialize();
+                    //$("#loginbtn").unbind("click").text("Đang đăng nhập...");
+                    var url = "/Home/Reg";
+
+                    
+                    $.post(url, d, function (res) {
+                        if (res.status == false) {
+                            $(".alert-box").hide();
+                            var html = '<div class="alert-box"><div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>' + res.msg + '</div></div>';
+                            $("#registration-form").append(html);
+
+                        } else {
+                            $(".alert-box").hide();
+                            var html = '<div class="alert-box"><div class="alert alert-success"><i class="fa fa-check-circle"></i>Đăng ký thành công</div></div>';
+                            $("#registration-form").append(html);
+                            location.reload();
+                        }
+                    }, "json");
+                }
+            });
+
+        });
+    </script>
+}
+<div class="row">
+    <div class="col-sm-5">
+
+        <div class="form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Đăng nhập</h3>
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-key"></i>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <form class="login-form" id="login-form">
+                    <div class="form-group">
+                        <input type="text" id="UserName" name="Username" placeholder="Tên đăng nhập..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="Password" name="Password" placeholder="Mật khẩu..." class="form-control">
+                    </div>
+                    <button class="btn" id="loginbtn">Đăng nhập</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-1 middle-border"></div>
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-5">
+
+        <div class="form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Đăng ký</h3>
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-pencil"></i>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <form class="registration-form" id="registration-form">
+                    <div class="form-group">
+                        <input type="text" name="UserName" placeholder="Tên đăng nhập..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Email" placeholder="Email..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Mobile" placeholder="Số điện thoại..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Name" placeholder="Tên đầy đủ..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Address" placeholder="Địa chỉ..." class="form-control">
+                    </div>
+                    <div class="form-group" style="display:flex; align-items:center">
+                        <label class="col-form-label" style="padding-right: 20px">Giới tính:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  id="Male" name="Sex" value="true" checked>
+                            <label class="form-check-label" for="Male">
+                                Nam
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  id="Female" name="Sex" value="false">
+                            <label class="form-check-label" for="Female">
+                                Nữ
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="Password" id = "pass" placeholder="Mật khẩu..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu..." class="form-control">
+                    </div>
+
+                    <button class="btn">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@model List<TechShop.Models.Slide>
+<div class="home__main__banner__slide">
+    <div class="swiper-container slide-container">
+        <div class="swiper-wrapper">
+
+            @foreach (var item in Model)
+            {
+                <div class="swiper-slide"><img src="@item.Images" alt=""></div>
+            }
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model List<TechShop.Models.Menu>
+
+
+@foreach (var item in Model)
+{
+    <a href="@item.Link" target="@item.Target">@item.Text</a>
+}
+    <div class="parent">
+        <a href="@ViewBag.Link" target="_self">@ViewBag.Username</a>
+        @if (ViewBag.Username != "Đăng nhập")
+        {
+        <div class="arrow_box">
+            <a href="/dang-xuat">Đăng xuất</a>
+        </div>
+        }
+    </div>
+
+

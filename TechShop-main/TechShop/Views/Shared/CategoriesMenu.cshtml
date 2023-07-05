@@ -1,0 +1,17 @@
+﻿@model List<TechShop.Models.ProductCategory>
+@foreach (var item in Model.Where(x => x.ParentID == null))
+{
+    var child = Model.Where(x => x.ParentID == item.ID);
+
+    <li class="mega-menu__item">
+        <a href="/@item.MetaTitle-@item.ID" class="mega-menu__link">@item.Title <i class="far fa-angle-right"></i></a>
+        <ul class="mega-sub-menu">
+            <h4><a href="/@item.MetaTitle-@item.ID">@item.Title</a></h4>
+            @foreach (var childItem in child)
+            {
+                <li class="mega-menu__item"><a href="/san-pham/@childItem.MetaTitle-@childItem.ID" class="mega-menu__link">@childItem.Title</a></li>
+            }
+            <div class="mega-menu__item--img"><img src="@item.NavImages"></div>
+        </ul>
+    </li>
+}

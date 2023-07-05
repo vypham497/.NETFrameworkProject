@@ -1,0 +1,135 @@
+﻿@model List<TechShop.Models.CartItem>
+@{
+    ViewBag.Title = "CheckOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section title{
+    <title>Thanh toán</title>
+}
+@section js {
+    <script>
+        var coll = document.getElementsByClassName("collapse-header");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+        <script>
+            $(document).ready(function () {
+                $.validator.addMethod("checkPhone", function (value, element) {
+                    return this.optional(element) || /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/i.test(value);
+                }, "Số điện thoại không hợp lệ");
+                $("#checkout-form").validate({
+
+                    invalidHandler: function (event, validator) {
+                        var errors = validator.numberOfInvalids();
+                        if (errors) {
+                            $(".alert-box").hide();
+                            var message = errors == 1
+                                ? 'Bạn đã nhập lỗi 1 field. Vui lòng nhập lại field này!'
+                                : 'Bạn đã nhập lỗi ' + errors + ' fields.  Vui lòng nhập lại cho các fields này!';
+                            var html = '<div class="alert-box"><div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>' + message + '</div></div>';
+                            $("#checkout-form").append(html);
+                        } else {
+
+                            $(".alert-box").hide();
+                        }
+                    },
+                    rules: {
+                        ShipName: { required: true, maxlength: 20 },
+                        ShipEmail: { required: true, email: true },
+                        ShipMobile: { required: true, checkPhone: "Mobile" },
+                        ShipAddress: { required: true },
+                        Note: { required: true }
+
+                    },
+                    messages: {
+                        ShipName: { required: "Bắt buộc nhập tên", maxlength: "Tối đa 50 ký tự" },
+                        ShipEmail: { required: "Chưa nhập email", email: "Vui lòng nhập email hợp lệ" },
+                        ShipMobile: { required: "Chưa nhập số điện thoại" },
+                        ShipAddress: { required: "Chưa nhập địa chỉ giao hàng" },
+                        Note: { required: "Chưa nhập ghi chú" }
+                    },
+                });
+
+            });
+        </script>
+}
+<div class="checkout-cart">
+    <div class="cart">
+        <div class="cart-products inline">
+            <div class="cart-process">
+                <div class="process active"><span>1. Chọn sản phẩm</span></div>
+                <div class="process active"><span>2. Xác nhận đơn hàng</span></div>
+                <div class="process active"><span>3. Thanh toán</span></div>
+            </div>
+            <div id="formdathang" class="form-checkout">
+                <div class="group-info">
+                    @using (Html.BeginForm("CheckOut", "Cart", FormMethod.Post, new { id = "checkout-form"}))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div id="info-shipping-address">
+                            <div class="title">Thông tin giao hàng</div>
+                            <div style="margin-bottom: 16px; padding-top: 15px;"><span style="color: red;">*</span> Trường bắt buộc</div>
+                            <div>
+                                <div class="input-group"><label for="">Họ &amp; tên người nhận <span style="color: red;">*</span></label> <input type="text" placeholder="Nhập tên khách hàng" name="ShipName"></div>
+                                <div class="input-group"><label for="">Địa chỉ email <span style="color: red;">*</span></label> <input type="email" placeholder="Nhập email" name="ShipEmail"></div>
+                                <div class="input-group"><label for="">Số điện thoại <span style="color: red;">*</span></label> <input type="text" placeholder="Nhập số điện thoại" name="ShipMobile"></div>
+                                <div class="input-group"><label for="">Địa chỉ giao hàng <span style="color: red;">*</span></label> <input type="text" placeholder="Nhập địa chỉ giao hàng" name="ShipAddress" rows="2"></div>
+                            </div>
+                        </div>
+                        <div class="input-group"><label for="">Ghi chú</label> <textarea placeholder="Nhập ghi chú" rows="2" name="Note"></textarea></div>
+                        <div class="group-info pay-method">
+                            <div class="title">Hình thức thanh toán</div>
+                            <div class="input-group"><input type="radio" value="cod" name="payMethod" checked="checked" class="input-radio" id="cod"> <label for="">Thanh toán tại nơi giao hàng</label></div>
+                            <div class="input-group"><input type="radio" value="paypal" name="payMethod" class="input-radio" id="paypal"> <label for="">Thanh toán qua Paypal</label></div>
+                            <div class="input-group"><input type="radio" value="vnpay" name="payMethod" class="input-radio" id="vnpay"> <label for="">Thanh toán qua VNPay</label></div>
+                        </div>
+                        <button type="submit" class="go-checkout">
+                            <!----> XÁC NHẬN MUA HÀNG
+                        </button>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+        <div class="cart-total-prices">
+            <div class="cart-prices">
+                <div class="title">THÔNG TIN GIỎ HÀNG</div>
+                <div>Số lượng sản phẩm <span class="p-count">@Model.Sum(x => x.Quantity)</span></div>
+                <div>Tổng chi phí <span class="price">@(Model.Sum(x => x.Quantity * x.Product.Price).Value.ToString("N0")) đ</span></div>
+                <div style="font-size: 14px; color: rgb(78, 78, 84); font-weight: normal; justify-content: flex-end;">Đã bao gồm VAT (nếu có)</div>
+                @foreach (var item in Model)
+                {
+                    <div class="cart-item">
+                        <div class="product-name">@item.Product.Title</div>
+                        <div class="product-content">
+                            <div class="collapse">
+                                <div class="collapse-header">
+                                    <i class="far fa-angle-down"></i> Chi tiết sản phẩm <!---->
+                                </div>
+                                <div class="collapse-body" style="display: none;">
+                                    <div class="short-desc">
+                                        @Html.Raw(item.Product.Description)
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                            <div class="cart-item-price">@((item.Product.Price * item.Quantity).Value.ToString("N0")) đ</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

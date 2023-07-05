@@ -1,0 +1,5 @@
+﻿@model List<TechShop.Models.CartItem>
+<button class="header__cart">
+    <img src="/Assets/Client/img/cart-icon.svg" alt="" class="head__cart__icon">
+    <span class="head__cart__amount">@Model.Sum(x => x.Quantity)</span>
+</button>

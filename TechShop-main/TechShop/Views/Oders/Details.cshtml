@@ -1,0 +1,204 @@
+﻿@model TechShop.Models.Order
+@using Newtonsoft.Json
+@{
+
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Assets/Client/fontawesome-pro-5.15.1-web/css/OrderTracking.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="breadcrumb">
+        <ul class="breadcrumb__list">
+            <li><a href="/"><i aria-hidden="true" class="fa fa-home"></i></a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+            <li><a href="/">Trang chủ</a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+            <li><a href="/">Quản lý đơn hàng</a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+            <li><a href="/">Chi tiết đơn hàng</a> </li>
+        </ul>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="invoice p-5">
+                        <h5>Người nhận hàng:  @Html.DisplayFor(model => model.ShipName) </h5>
+                        <span class="font-weight-bold d-block mt-4">Địa chỉ nhận hàng: @Html.DisplayFor(model => model.ShipAddress)</span>
+
+                        <div class="payment border-top mt-3 mb-3 border-bottom table-responsive">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="py-2">
+                                                <span class="d-block text-muted">Ngày đặt hàng</span>
+                                                <span>  @Html.DisplayFor(model => model.CreatedDate)</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="py-2">
+                                                <span class="d-block text-muted">Mã đơn hàng</span>
+                                                <span>  @Html.DisplayFor(model => model.ID)</span>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div class="py-2">
+                                                <span class="d-block text-muted">Số điện thoại nhận </span>
+                                                <span>@Html.DisplayFor(model => model.ShipMobile)</span>
+
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="py-2">
+                                                <span class="d-block text-muted">Trạng thái</span>
+                                                <span>  @Html.DisplayFor(model => model.Status)</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="product border-bottom table-responsive">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    @foreach (var x in @JsonConvert.DeserializeObject(ViewBag.prd))
+                                    {
+                                        <tr>
+                                            <td width="20%">
+                                                <img src="@x.image" width="90">
+
+                                            </td>
+
+                                            <td width="60%">
+                                                <span class="font-weight-bold">@x.proname</span>
+                                                <div class="product-qty">
+                                                    <span class="d-block">Quantity:@x.sl</span>
+                                                    <span></span>
+
+                                                </div>
+                                            </td>
+                                            <td width="20%">
+                                                <div class="text-right">
+                                                    <span class="font-weight-bold">@x.gia</span>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+
+
+                                </tbody>
+
+                            </table>
+
+
+
+                        </div>
+
+
+
+                        <div class="row d-flex justify-content-end">
+
+                            <div class="col-md-5">
+
+                                <table class="table table-borderless">
+
+                                    <tbody class="totals">
+
+                                        <tr>
+                                            <td>
+                                                <div class="text-left">
+
+                                                    <span class="text-muted">Tổng tiền</span>
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-right">
+                                                    <span> @Html.DisplayFor(model => model.TotalPrice) d</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <br />
+
+                                        <tr>
+                                            <td>
+                                                <div class="text-left">
+
+                                                    <span class="text-muted">Phí ship</span>
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-right">
+                                                    <span>0d</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>
+                                                <div class="text-left">
+
+                                                    <span class="text-muted">Thuế</span>
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-right">
+                                                    <span>0d</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr class="border-top border-bottom">
+                                            <td>
+                                                <div class="text-left">
+
+                                                    <span class="font-weight-bold">Thành tiền</span>
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="text-right">
+                                                    <span class="font-weight-bold"> @Html.DisplayFor(model => model.TotalPrice)</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <p class="font-weight-bold mb-0">Cám ơn bạn đã mua hàng!</p>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,14 @@
+﻿@model List<TechShop.Models.ProductCategory>
+<div class="block block--home">
+    <div class="block__header"><span class="block__header__title">DANH MỤC SẢN PHẨM</span></div>
+    <div class="block__content home__category">
+        @foreach (var item in Model.Where(x => x.ParentID == null))
+        {
+            <a href="/@item.MetaTitle-@item.ID">
+                <div class="shape" style="border-color: @item.Style"></div>
+                <img src="@item.Images" alt="">
+                <div class="text">@Html.Raw(item.Description)</div>
+            </a>
+        }
+    </div>
+</div>

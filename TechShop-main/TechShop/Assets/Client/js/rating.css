@@ -1,0 +1,27 @@
+.star {
+    margin-right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    color: #EDEDED;
+    overflow: hidden
+}
+
+.star::before{
+    content: "\f005";
+}
+
+.fullStar {
+    margin-right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    overflow: hidden;
+    color: #FCC00B;
+}
+
+.fullStar::after {
+   content: "\f005";
+}

@@ -1,0 +1,66 @@
+﻿@model TechShop.Models.Slide
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section css{
+    <style>
+        .img-custom {
+            width: 200px;
+        }
+    </style>
+}
+@section header{
+    Chi tiết slide @Model.Name
+}
+
+<div>
+    <hr />
+    <table class="table table-striped">
+        <tr>
+            <th scope="row">Loại Slide</th>
+            <td>@Html.DisplayFor(model => model.GroupSlide.Name)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Name)</th>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Description)</th>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Link)</th>
+            <td>@Html.DisplayFor(model => model.Link)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Images)</th>
+            <td><img class="img-fluid img-custom" src="@Url.Content(""+Html.DisplayFor(model => model.Images))" alt=""></td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Order)</th>
+            <td>@Html.DisplayFor(model => model.Order)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Status)</th>
+            <td>
+                @{
+                    if (Model.Status == true)
+                    {
+                        <span class="badge badge-pill badge-success">Kích hoạt</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-pill badge-danger">Chưa kích hoạt</span>
+                    }
+                        }
+                    </td>
+        </tr>
+    </table>
+    <hr />
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", null, new { id = Model.ID }, new { @class = "btn btn-primary btn-icon-split btn-padding" }) |
+    @Html.ActionLink("Trở lại", "Index", null, new { @class = "btn btn-secondary btn-icon-split btn-padding" })
+</p>

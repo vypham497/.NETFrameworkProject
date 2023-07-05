@@ -1,0 +1,283 @@
+﻿@model PagedList.IPagedList<TechShop.Models.Product>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section title{
+    <title>@ViewBag.KeyWord</title>
+}
+@section css{
+    <style>
+        .custom-select-wrapper {
+            position: relative;
+            user-select: none;
+            color: #203140;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-select {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: 40px;
+            border-radius: unset;
+            background: #f0f3fc;
+            border: none;
+            margin-left: 5px;
+        }
+
+        .custom-select__trigger {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 22px;
+            font-size: 18px;
+            font-weight: 300;
+            color: #3b3b3b;
+            height: 40px;
+            background: #f0f3fc;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .custom-options {
+            position: absolute;
+            display: block;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #f0f3fc;
+            transition: all 0.5s;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            z-index: 2;
+            border: 1px solid black;
+        }
+
+        .custom-select.open .custom-options {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        .custom-option {
+            position: relative;
+            display: block;
+            height: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #000;
+            cursor: pointer;
+            line-height: 20px;
+            padding: 0 22px;
+        }
+
+            .custom-option:hover {
+                cursor: pointer;
+                background-color: #305c91;
+                color: #fff;
+            }
+
+            .custom-option a {
+                color: #000
+            }
+
+            .custom-option:hover a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+        .arrow {
+            position: relative;
+            height: 10px;
+            width: 10px;
+        }
+
+            .arrow::before, .arrow::after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                width: 0.1rem;
+                height: 100%;
+                transition: all 0.5s;
+            }
+
+            .arrow::before {
+                left: -3px;
+                transform: rotate(-45deg);
+                background-color: #394a6d;
+            }
+
+            .arrow::after {
+                left: 4px;
+                transform: rotate(45deg);
+                background-color: #394a6d;
+            }
+
+        .open .arrow::before {
+            left: -3px;
+            transform: rotate(45deg);
+        }
+
+        .open .arrow::after {
+            left: 4px;
+            transform: rotate(-45deg);
+        }
+    </style>
+}
+@section js{
+    <script>
+        var swiper = new Swiper('.product-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            //autoplay: {
+            //    delay: 2500,
+            //    disableOnInteraction: false,
+            //},
+            // init: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                },
+            }
+        });
+    </script>
+    <script>
+        document.querySelector('.custom-select-wrapper').addEventListener('click', function () {
+            this.querySelector('.custom-select').classList.toggle('open');
+        })
+        window.addEventListener('click', function (e) {
+            const select = document.querySelector('.custom-select')
+            if (!select.contains(e.target)) {
+                select.classList.remove('open');
+            }
+        });
+
+    </script>
+}
+<div class="category">
+    <div class="breadcrumb">
+        <ul class="breadcrumb__list">
+            <li><a href="/"><i aria-hidden="true" class="fa fa-home"></i></a> <i aria-hidden="true" class="far fa-angle-right"></i></li>
+            <li><a href="/">Trang chủ</a>
+        </ul>
+    </div>
+    <div class="banner banner--list__cat"></div>
+    <div class="mb-button-filter hide-pc">
+        <i class="fal fa-filter"></i>Lọc Sản Phẩm
+    </div>
+    @if (ViewBag.totalRecord > 0)
+    {
+        string keyword = ViewBag.Keyword;
+
+        <div id="content" class="category__content">
+            <!---->
+            <div class="category__product-list">
+                <div class="list-header">
+                    <div class="list-header__top">
+                        <div class="category-name"><span>(@(ViewBag.totalRecord) sản phẩm)</span></div>
+                        <div class="custom-select-wrapper">
+                            Sắp xếp theo:
+                            <div class="custom-select">
+                                <div class="custom-select__trigger">
+                                    <span>@ViewBag.SortLabel</span>
+                                    <div class="arrow"></div>
+                                </div>
+                                <div class="custom-options">
+                                    <span class="custom-option" data-value="date_desc">@Html.ActionLink("Mới nhất", "Search", new { keyword, sortOrder = "date", category_id = ViewBag.CategoryID })</span>
+                                    <span class="custom-option" data-value="price">@Html.ActionLink("Giá (Thấp - cao)", "Search", new { keyword, sortOrder = "Price", category_id = ViewBag.CategoryID })</span>
+                                    <span class="custom-option" data-value="price_desc">@Html.ActionLink("Giá (Cao - thấp)", "Search", new { keyword, sortOrder = "price_desc", category_id = ViewBag.CategoryID })</span>
+                                    <span class="custom-option" data-value="name">@Html.ActionLink("Tên (A - Z)", "Search", new { keyword, sortOrder = "Name", category_id = ViewBag.CategoryID })</span>
+                                    <span class="custom-option" data-value="name_desc">@Html.ActionLink("Tên (Z - A)", "Search", new { keyword, sortOrder = "name_desc", category_id = ViewBag.CategoryID })</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-list">
+                    @foreach (var item in Model)
+                    {
+                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                        long percent = 0;
+                        string myClass = "hide";
+                        string oldPrice = "";
+                        if (item.OldPrice.HasValue)
+                        {
+                            oldPrice = item.OldPrice.Value.ToString("N0") + "đ";
+                            percent = Convert.ToInt64((item.OldPrice - item.Price) / item.OldPrice * 100);
+                        }
+                        <div class="product">
+                            @if (percent != 0)
+                            {
+                                myClass = "percent";
+                            }
+                            <div class="@myClass"><span>@(percent)%</span></div>
+                            <div class="product__thumb">
+                                <a class="product__link" href="@url"><img src="@item.Thumb" alt=""></a>
+                            </div>
+                            <div class="product__bottom">
+                                <div class="product__title">
+                                    <a href="@url" class="product__link">@item.Title</a>
+                                </div>
+                                <div class="product__rate">
+                                    <div class="rate__star">
+                                        <i class="fas fa-star "></i>
+                                        <i class="fas fa-star "></i>
+                                        <i class="fas fa-star "></i>
+                                        <i class="fas fa-star "></i>
+                                        <i class="fas fa-star "></i>
+                                    </div>
+                                    <div class="rate__text">0 đánh giá</div>
+                                </div>
+                                <div class="product__price">
+                                    <span class="price__selling">@(item.Price.Value.ToString("N0")) đ</span>
+                                    <span class="price__old">@oldPrice</span>
+                                </div>
+                                <button class="add-to-cart" @*href="/them-gio-hang?id=@item.ID&quantity=1"*@ data-id="@item.ID">Mua ngay</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="category__paginate">
+                    <ul class="pagination">
+                        @Html.PagedListPager(Model, page => Url.Action("Search",
+new { page,keyword,sortOrder= ViewBag.CurrentSort, category_id = ViewBag.CategoryID }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <span>Rất tiếc, chúng tôi không tìm thấy sản phẩm nào cả!</span>
+    }
+    @{Html.RenderAction("RecentProduct", "Home"); }
+
+</div>
+@section value{
+    @ViewBag.Keyword
+}

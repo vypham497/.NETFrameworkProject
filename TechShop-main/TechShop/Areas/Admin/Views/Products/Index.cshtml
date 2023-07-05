@@ -1,0 +1,184 @@
+﻿@model IEnumerable<TechShop.Areas.Admin.Models.ProductWithCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section css{
+    <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+
+        .img-custom {
+            width: 100px;
+        }
+    </style>
+}
+@section js{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="/Assets/Admin/js/demo/datatables-demo.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+            
+        $('.btnDelete').each(function () {
+            var ID = $(this).data('id');
+            $(this).off('click').on('click', function () {
+                swal({
+                    title: "Bạn chắc chứ?",
+                    text: "Xoá sản phẩm " + ID,
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '/Products/Delete/',
+                                data: {
+                                    id: ID
+                                },
+                                dataType: 'json',
+                                type: 'POST',
+                                success: function (res) {
+                                    if (res.status == true) {
+                                        swal("Xoá sản phẩm thành công!", {
+                                            icon: "success",
+                                        });
+                                        var $tr = $(this).closest('tr');
+                                        $tr.remove();
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        } else {
+                            swal("Sản phẩm vẫn được giữ nguyên!");
+                        }
+                    });
+            });
+        });
+    </script>
+
+}
+<p>
+    @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn btn-success btn-icon-split btn-padding" })
+</p>
+<div class="mb-4">
+    <form method="post" action="/Admin/Products/Index">
+        <div class="form-inline">
+            <div class="mb-2 mr-sm-2">
+                <select class="custom-select" name="Category">
+                    <option selected value="0">Chọn loại sản phẩm</option>
+                    @foreach (var item in ViewBag.Category)
+                    {
+                        <option value="@item.ID">@item.Title</option>
+                    }
+
+                </select>
+            </div>
+            <div class="mb-2 mr-sm-2">
+                <select class="custom-select" name="Brand">
+                    <option selected value="0">Chọn nhãn hàng</option>
+                    @foreach (var item in ViewBag.Brand)
+                    {
+                        <option value="@item.ID">@item.Title</option>
+                    }
+
+                </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Tên sản phẩm</div>
+                </div>
+                <input type="text" class="form-control" name="txtSearch">
+            </div>
+            <button type="submit" id="SearchBtn" class="btn btn-primary mb-2">Tìm kiếm</button>
+        </div>
+    </form>
+</div>
+<div class="card mb-4">
+    <div class="card-header">Danh sách sản phẩm</div>
+    <div class="card-body">
+        <div class="datatable">
+            <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Thumb)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Quantity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.CategoryID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.ViewCount)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Images)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.Quantity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.CategoryID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Product.ViewCount)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </tfoot>
+                <tbody id="SearchData">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td id="ProductName">
+                                <a href="/Admin/Products/Details/@item.Product.ID" data-toggle="tooltip" data-placement="top" title="Xem chi tiết">@Html.DisplayFor(modelItem => item.Product.Title)</a>
+                            </td>
+                            <td id="ProductImage">
+                                <img class="img-fluid img-custom" src="@Html.DisplayFor(modelItem =>item.Product.Thumb)" alt="">
+                            </td>
+                            <td id="ProductPrice">
+                                @item.Product.Price.Value.ToString("N0")
+                            </td>
+                            <td id="ProductQuantity">
+                                @Html.DisplayFor(modelItem => item.Product.Quantity)
+                            </td>
+                            <td id="ProductTitle">
+                                @Html.DisplayFor(modelItem => item.category.Title)
+                            </td>
+                            <td id="ProductView">
+                                @Html.DisplayFor(modelItem => item.Product.ViewCount)
+                            </td>
+                            <td style="display:flex">
+                                <a class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Sửa" href="/Admin/Products/Edit/@item.Product.ID"><i class="fa fa-edit"></i></a> |
+                                <a class="btnDelete btn btn-danger btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Xoá" data-id="@item.Product.ID"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

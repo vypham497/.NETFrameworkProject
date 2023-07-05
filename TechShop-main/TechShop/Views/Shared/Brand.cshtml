@@ -1,0 +1,26 @@
+﻿@model List<TechShop.Models.Brand>
+
+<div class="block block_brands">
+    <div class="block_brands">
+        <div class="block__header"><span class="block__header__title">CÁC THƯƠNG HIỆU</span></div>
+
+        <!-- Brands Slider -->
+        <div class="block__content desktop">
+            <div class="brands_slider swiper-container">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model)
+                    {
+                        <div class="swiper-slide">
+                            <img src="@item.Logo" alt="" class="swiper-lazy">
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+
+                    }
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,153 @@
+﻿@model IEnumerable<TechShop.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section css{
+    <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+}
+@section js{
+    <!-- Page level plugins -->
+    <script src="~/Assets/Admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="/Assets/Admin/js/demo/datatables-demo.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        $('.btnDelete').each(function () {
+            var ID = $(this).data('id');
+            $(this).off('click').on('click', function () {
+                swal({
+                    title: "Bạn chắc chứ?",
+                    text: "Xoá đơn hàng " + ID,
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '/Orders/Delete/',
+                                data: {
+                                    id: ID
+                                },
+                                dataType: 'json',
+                                type: 'POST',
+                                success: function (res) {
+                                    if (res.status == true) {
+                                        swal("Xoá đơn hàng thành công!", {
+                                            icon: "success",
+                                        });
+                                        var $tr = $(this).closest('tr');
+                                        $tr.remove();
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        } else {
+                            swal("Đơn hàng vẫn được giữ nguyên!");
+                        }
+                    });
+            });
+        });
+    </script>
+
+}
+    <div class="mb-4">
+        <form method="post" action="/Admin/Orders/Index">
+            <div class="form-inline">
+                <div class="mb-2 mr-sm-2">
+                    <select class="custom-select" name="Status">
+                        <option selected value="0">Tất cả</option>
+                        <option value="1">Chưa xử lý</option>
+                        <option value="2">Đã xử lý</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="Loc" class="btn btn-primary mb-2">Lọc</button>
+            </div>
+        </form>
+    </div>
+<div class="card mb-4">
+    <div class="card-header">Danh sách đơn hàng</div>
+    <div class="card-body">
+        <div class="datatable">
+            <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShipName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreatedDate)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.TotalPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShipName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreatedDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TotalPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>
+                                <a data-toggle="tooltip" data-placement="top" title="Xem chi tiết đơn hàng" href="/Admin/Orders/Details/@item.ID"> @item.ID</a>
+                            </th>
+                            <td>
+                                <a data-toggle="tooltip" data-placement="top" title="Xem thông tin khách hàng" href="/Admin/Users/Details/@Html.DisplayFor(modelItem => item.CustomerID)">@Html.DisplayFor(modelItem => item.ShipName)</a>
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDate)
+                            </td>
+                            <td>
+                                @item.TotalPrice.Value.ToString("N0")
+                            </td>
+                            <td>
+                                @item.Status
+                            </td>
+                            <td style="display:flex">
+                                <a class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Sửa" href="/Admin/Orders/Edit/@item.ID"><i class="fa fa-edit"></i></a> |
+                                <a class="btnDelete btn btn-danger btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Xoá" data-id="@item.ID"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,270 @@
+﻿@using TechShop.Common
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin</title>
+    <!-- Custom fonts for this template-->
+    <link href="/Assets/Client/fontawesome-pro-5.15.1-web/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="/Assets/Admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/Assets/Admin/css/custom.css" rel="stylesheet">
+    @RenderSection("css", required: false)
+    <style>
+        .card {
+            border-top: 3px solid #d2d6de;
+        }
+
+        .bg-gradient-primary {
+            background-color: #2c3e50;
+            background-image: none;
+        }
+
+        .icon-wrapper {
+            border-radius: 100%;
+            /* border: 1px solid black; */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .bg-gradient-primary {
+            background-color: #2c3e50;
+            background-image: none;
+        }
+
+        .shadow {
+            box-shadow: none;
+        }
+
+        .datatable table.dataTable thead, .datatable table.dataTable tfoot {
+            color: #0061f2;
+        }
+    </style>
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="~/Admin/Home/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Admin</div>
+            </a>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Dashboard -->
+            <div class="sidebar-heading">
+                Quản lý
+            </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
+                    <i class="fas fa-users"></i>
+                    <span>Quản lý người dùng</span>
+                </a>
+                <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="~/Admin/Users/">Người dùng</a>
+                        <a class="collapse-item" href="~/Admin/Users/">Phân quyền</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNewses" aria-expanded="true" aria-controls="collapseNewses">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Quản lý bài viết</span>
+                </a>
+                <div id="collapseNewses" class="collapse" aria-labelledby="headingNewses" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="~/Admin/News/">Bài viết</a>
+                        <a class="collapse-item" href="~/Admin/Categories/">Danh mục bài viết</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
+                    <i class="fab fa-product-hunt"></i>
+                    <span>Quản lý sản phẩm</span>
+                </a>
+                <div id="collapseProducts" class="collapse" aria-labelledby="headingProducts" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="~/Admin/Products/">Sản phẩm</a>
+                        <a class="collapse-item" href="~/Admin/ProductCategories/">Danh mục sản phẩm</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
+                    <i class="fas fa-bags-shopping"></i>
+                    <span>Quản lý đơn hàng</span>
+                </a>
+                <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="~/Admin/Orders/">Đơn hàng</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFeedback" aria-expanded="true" aria-controls="collapseFeedback">
+                    <i class="fas fa-comment-alt-lines"></i>
+                    <span>Quản lý feedback</span>
+                </a>
+                <div id="collapseFeedback" class="collapse" aria-labelledby="headingFeedback" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="~/Admin/Feedbacks/">Feedback</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUi" aria-expanded="true" aria-controls="collapseUi">
+                    <i class="fab fa-sketch"></i>
+                    <span>Quản lý giao diện</span>
+                </a>
+                <div id="collapseUi" class="collapse" aria-labelledby="headingUi" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="~/Admin/Socials/">MXH</a>
+                        <a class="collapse-item" href="~/Admin/Footers/">Footer</a>
+                        <a class="collapse-item" href="~/Admin/Brands/">Brand</a>
+                        <a class="collapse-item" href="~/Admin/Slides/">Slide</a>
+                        <a class="collapse-item" href="~/Admin/Menus/">Menu</a>
+                        <a class="collapse-item" href="~/Admin/MenuTypes/">Loại Menu</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@Session[CommonConstants.USER_SESSION]</span>
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Đăng xuất
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <h1 class="h3 mb-4 text-gray-800">@RenderSection("header", required: false)</h1>
+                    @RenderBody()
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+            
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng xuất</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Click đăng xuất nếu bạn đã sẵn sàng kết thúc phiên làm việc.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="@Url.Action("Logout", "Login")">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/Assets/Admin/vendor/jquery/jquery.min.js"></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Assets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/Assets/Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/Assets/Admin/js/ckfinder/ckfinder.js"></script>
+    <script src="/Assets/Admin/js/ckeditor/ckeditor.js"></script>
+    <script src="/Assets/Admin/js/sb-admin-2.js"></script>
+    <script src="/Assets/Admin/js/jquery.validate.min.js"></script>
+    <script src="/Assets/Admin/js/sweetalert.min.js"></script>
+    @RenderSection("js", required: false)
+    @if (TempData["AlertMessage"] != null)
+    {
+        <script>
+            var Title = $('<textarea />').html("@TempData["AlertMessage"]").text();
+            swal({
+                title: Title,
+                icon: "@TempData["AlertType"]",
+                button: "Ok!",
+            });
+        </script>
+    }
+</body>
+</html>
+
